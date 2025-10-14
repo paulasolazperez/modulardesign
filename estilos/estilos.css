@@ -128,7 +128,26 @@ body {
   text-align: center;
   z-index: 1;
 }
- 
+
+ .boton-descubre {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--botones);
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-descubre:hover {
+  background-color: var(--hover);
+  transform: scale(1.05);
+}
+
 /* CATÁLOGO */
 main {
   flex: 1;
