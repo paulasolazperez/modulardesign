@@ -129,6 +129,16 @@ body {
   z-index: 1;
 }
 
+.titulo-hero {
+  font-size: 70px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.eslogan {
+  font-size: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
  .boton-descubre {
   display: inline-block;
   margin-top: 2rem;
@@ -141,6 +151,8 @@ body {
   border-radius: 25px;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  
 }
 
 .boton-descubre:hover {
