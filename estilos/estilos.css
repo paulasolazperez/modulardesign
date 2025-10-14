@@ -1,20 +1,29 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-family: 'Trebuchet MS', sans-serif;
 }
 
 :root {
-    --fondogen: #1c1c1c;
-    --fondosec: #141414;
-    --textoprin: white;
-    --textosec: #e0e0e0;
-    --botones: #e10600;
-    --hover: #ff3d00;
-    --precios: #ffd700;
+  --fondogen: #1c1c1c;
+  --fondosec: #141414;
+  --textoprin: white;
+  --textosec: #e0e0e0;
+  --botones: #e10600;
+  --hover: #ff3d00;
+  --precios: #ffd700;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
-    background-color: var(--fondogen);
+  background-color: var(--fondogen);
+  display: flex;
+  flex-direction: column;
 }
 
 /* HEADER */
@@ -38,14 +47,14 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 1600; /* por encima del menú */
+  z-index: 1600;
 }
 
 /* MENÚ LATERAL */
 .menu-lateral {
   position: fixed;
   top: 0;
-  right: -100%; /* fuera de la vista */
+  right: -100%;
   width: 70%;
   max-width: 300px;
   height: 100vh;
@@ -65,8 +74,6 @@ body {
 
 .menu-lateral ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .menu-lateral li {
@@ -84,7 +91,6 @@ body {
   color: var(--hover);
 }
 
-/* OPCIONAL: fondo difuminado detrás del menú */
 .menu-lateral.open::before {
   content: "";
   position: fixed;
@@ -99,75 +105,142 @@ body {
 
 /* Hero con fondo de imagen */
 .hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-/* Imagen de fondo con blur */
 .hero-fondo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('../images/imagen_fondo_main.jpg') center/cover no-repeat;
-    filter: blur(5px); /* el blur solo aquí */
-    z-index: -1; /* atrás del contenido */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('../images/imagen_fondo_main.jpg') center/cover no-repeat;
+  filter: blur(5px);
+  z-index: -1;
 }
 
-/* Texto del hero */
 .hero-texto {
-    position: relative;
-    color: white;
-    text-align: center;
-    z-index: 1; /* por encima de la imagen */
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
 }
 
+/* Catalogo: página completa */
+main {
+  flex: 1;
+}
 
-/* Catalogo: fondo oscuro */
 .catalogo {
-    padding: 2rem;
-    background-color: var(--fondogen);
-    color: var(--textoprin);
+  padding: 3rem;
+  margin: 0;
+  height: 100vh; /* ocupa toda la ventana */
+  background-color: var(--fondogen);
+  color: var(--textoprin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centra contenido verticalmente */
 }
 
+.catalogo h2 {
+  margin-bottom: 3rem; /* separa título del vinilo */
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background: var(--fondosec);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.4s ease; /* transiciones suaves */
+  z-index: 1500;
+}
+
+.menu-lateral.open {
+  right: 0;
+}
+
+
+/* Carta del vinilo */
 .vinilo {
-    display: flex;
-    flex-wrap: wrap; /* para que sea responsive */
-    align-items: center;
-    gap: 2rem;
-    margin-top: 1rem;
-    background-color: var(--fondosec);
-    border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--fondosec);
+  border-radius: 25px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 1100px;
+}
+
+/* Hover expansivo */
+.vinilo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 .vinilo-imagen {
-    width: 400px; /* tamaño de la imagen */
-    height: auto;
-    border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
 }
 
 .vinilo-info {
-    flex: 1; /* ocupa el espacio restante */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
 }
 
 .vinilo-titulo {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  color: var(--precios);
 }
 
 .vinilo-descripcion {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: var(--textosec);
 }
 
 .vinilo-precio {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--precios);
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--precios);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* FOOTER */
+footer.footer {
+  background-color: var(--fondosec);
+  color: var(--textosec);
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+footer.footer p {
+  margin: 0;
 }

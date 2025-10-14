@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cormorant… rel="
-        stylesheet">
+        stylesheet>
 </head>
 
 <body>
@@ -17,23 +17,23 @@
         <button class="hamburger-btn" id="hamburger-btn">☰</button>
         <nav class="menu-lateral" id="menu-lateral">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#index" >Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-fondo"></div> <!-- SOLO la imagen de fondo -->
+        <section id="index" class="hero">
+            <div class="hero-fondo"></div>
             <div class="hero-texto">
                 <h1 class="titulo-hero">Chocola Vinyls</h1>
                 <p class="eslogan">Sonido eterno, calidad inifita.</p>
             </div>
         </section>
-        <section class="catalogo">
+        <section id="catalogo" class="catalogo">
             <h2>Vinilo Destacado</h2>
             <div class="vinilo">
                 <img src="images/vinilo-45ani.png" alt="Vinilo 45 Aniversario" class="vinilo-imagen">
@@ -44,8 +44,12 @@
                 </div>
             </div>
         </section>
-
     </main>
+
+    <footer class="footer">
+        <p>© 2025 Chocolate Vinyls. Hecho por Modular Design.</p>
+    </footer>
+
     <script src="menu_hamburgesa.js"></script>
 </body>
 
