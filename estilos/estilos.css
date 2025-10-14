@@ -4,7 +4,7 @@
   padding: 0;
   font-family: 'Trebuchet MS', sans-serif;
 }
-
+ 
 :root {
   --fondogen: #1c1c1c;
   --fondosec: #141414;
@@ -14,18 +14,18 @@
   --hover: #ff3d00;
   --precios: #ffd700;
 }
-
+ 
 html,
 body {
   height: 100%;
 }
-
+ 
 body {
   background-color: var(--fondogen);
   display: flex;
   flex-direction: column;
 }
-
+ 
 /* HEADER */
 .header-inicio {
   position: fixed;
@@ -39,7 +39,7 @@ body {
   padding: 0 2rem;
   z-index: 1000;
 }
-
+ 
 /* BOTÓN HAMBURGUESA */
 .hamburger-btn {
   font-size: 30px;
@@ -49,7 +49,7 @@ body {
   cursor: pointer;
   z-index: 1600;
 }
-
+ 
 /* MENÚ LATERAL */
 .menu-lateral {
   position: fixed;
@@ -64,33 +64,33 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: right 0.3s ease-in-out;
+  transition: right 0.4s ease;
   z-index: 1500;
 }
-
+ 
 .menu-lateral.open {
   right: 0;
 }
-
+ 
 .menu-lateral ul {
   list-style: none;
 }
-
+ 
 .menu-lateral li {
   margin: 20px 0;
 }
-
+ 
 .menu-lateral a {
   color: #fff;
   font-size: 1.6rem;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
+ 
 .menu-lateral a:hover {
   color: var(--hover);
 }
-
+ 
 .menu-lateral.open::before {
   content: "";
   position: fixed;
@@ -102,8 +102,8 @@ body {
   backdrop-filter: blur(3px);
   z-index: -1;
 }
-
-/* Hero con fondo de imagen */
+ 
+/* HERO */
 .hero {
   position: relative;
   height: 100vh;
@@ -112,7 +112,7 @@ body {
   align-items: center;
   overflow: hidden;
 }
-
+ 
 .hero-fondo {
   position: absolute;
   width: 100%;
@@ -121,61 +121,38 @@ body {
   filter: blur(5px);
   z-index: -1;
 }
-
+ 
 .hero-texto {
   position: relative;
   color: white;
   text-align: center;
   z-index: 1;
 }
-
-/* Catalogo: página completa */
+ 
+/* CATÁLOGO */
 main {
   flex: 1;
 }
-
+ 
 .catalogo {
   padding: 3rem;
   margin: 0;
-  height: 100vh; /* ocupa toda la ventana */
+  height: 100vh;
   background-color: var(--fondogen);
   color: var(--textoprin);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* centra contenido verticalmente */
+  justify-content: center;
 }
-
+ 
 .catalogo h2 {
-  margin-bottom: 3rem; /* separa título del vinilo */
+  margin-bottom: 3rem;
   font-size: 2.5rem;
   text-align: center;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
-
-.menu-lateral {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 70%;
-  max-width: 300px;
-  height: 100vh;
-  background: var(--fondosec);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: right 0.4s ease; /* transiciones suaves */
-  z-index: 1500;
-}
-
-.menu-lateral.open {
-  right: 0;
-}
-
-
-/* Carta del vinilo */
+ 
 .vinilo {
   display: flex;
   flex-wrap: wrap;
@@ -188,20 +165,19 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 1100px;
 }
-
-/* Hover expansivo */
+ 
 .vinilo:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
-
+ 
 .vinilo-imagen {
   width: 100%;
   max-width: 400px;
   height: auto;
   display: block;
 }
-
+ 
 .vinilo-info {
   flex: 1;
   display: flex;
@@ -209,28 +185,51 @@ main {
   justify-content: center;
   padding: 3rem;
 }
-
+ 
 .vinilo-titulo {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   color: var(--precios);
 }
-
+ 
 .vinilo-descripcion {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   line-height: 1.5;
   color: var(--textosec);
 }
-
+ 
 .vinilo-precio {
   font-size: 1.6rem;
   font-weight: bold;
   color: var(--precios);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
-
+ 
+/* SOBRE NOSOTROS */
+.nosotros-seccion {
+  background-color: var(--fondosec);
+  color: var(--textoprin);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+ 
+.nosotros-titulo {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--precios);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+ 
+.nosotros-texto {
+  font-size: 1.2rem;
+  color: var(--textosec);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+ 
 /* FOOTER */
 footer.footer {
   background-color: var(--fondosec);
@@ -240,7 +239,9 @@ footer.footer {
   font-size: 14px;
   margin-top: auto;
 }
-
+ 
 footer.footer p {
   margin: 0;
 }
+ 
+ 
