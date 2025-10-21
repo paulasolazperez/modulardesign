@@ -274,6 +274,29 @@ main {
   margin: 0 auto;
   line-height: 1.7;
 }
+
+/* HISTORIA */
+.historia-seccion {
+  background: var(--fondogen); /* mismo fondo que el catálogo */
+  color: #fff;
+  padding: 80px 2rem;
+  text-align: center;
+}
+
+.historia-titulo {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Cormorant', serif;
+}
+
+.historia-texto {
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
  
 /* FOOTER */
 footer.footer {
