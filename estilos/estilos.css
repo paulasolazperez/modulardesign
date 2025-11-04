@@ -300,92 +300,104 @@ main {
  
 /* --- Footer --- */
 .footer {
+  width: 100%;
   background-color: var(--fondosec);
   color: var(--textosec);
-  padding: 3rem 1.5rem;
-  font-family: 'Inter', sans-serif;
+  padding: 2rem;
 }
-
+ 
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
 }
-
+ 
 .footer-section {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1.5rem;
+  flex: 1;
 }
-
+ 
+.footer-divider {
+  width: 1px;
+  background-color: #444;
+}
+ 
 .footer-title {
   color: var(--textoprin);
   font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
-
+ 
 .footer-description {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: var(--textosec);
 }
-
+ 
 .footer-subtitle {
   color: var(--textoprin);
   font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
-
+ 
+.footer-credit {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1rem;
+}
+ 
+.footer-credit span {
+  color: var(--precios);
+}
+ 
 .footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
+ 
 .footer-links li {
   margin-bottom: 0.5rem;
 }
-
+ 
 .footer-links a {
   color: var(--textosec);
   text-decoration: none;
   transition: color 0.3s;
 }
-
+ 
 .footer-links a:hover {
   color: var(--hover);
 }
-
+ 
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+ 
 .social-links a {
   color: var(--textosec);
-  font-size: 1.3rem;
-  margin-right: 1rem;
-  transition: color 0.3s;
+  font-size: 1.4rem;
+  transition: transform 0.2s ease, color 0.3s;
 }
-
+ 
 .social-links a:hover {
   color: var(--botones);
+  transform: scale(1.1);
 }
-
-.footer-bottom {
-  border-top: 1px solid #2a2a2a;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--textosec);
-}
-
-.footer-bottom span {
-  color: var(--precios);
-  font-weight: 500;
-}
-
-/* Responsivo */
-@media (min-width: 768px) {
+ 
+/* RESPONSIVO */
+@media (max-width: 900px) {
   .footer-container {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+ 
+  .footer-divider {
+    display: none;
   }
 }
