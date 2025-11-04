@@ -528,6 +528,11 @@ main {
   color: #e53935;
 }
 
+.footer-rating-top .rating-submit {
+  display: block;
+  margin: 1rem auto 0; /* margen superior y centrado horizontal */
+}
+
 /* Responsivo */
 @media (max-width: 900px) {
   .footer-container {
