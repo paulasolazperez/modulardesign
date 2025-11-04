@@ -86,45 +86,105 @@
     </main>
  
 <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-section">
-        <h2 class="footer-title">Chocolate Vinyls</h2>
-        <p class="footer-description">
-          Discos que suenan mejor que nunca. Ediciones exclusivas, vinilos raros y sonido con alma.
-        </p>
-        <p class="footer-credit">
-          © 2025 <span>Chocolate Vinyls</span>. Hecho con 💛 por Modular Design.
-        </p>
+
+  <!-- Zona superior: valoración -->
+  <div class="footer-rating-top">
+    <h3 class="footer-subtitle">Valora nuestra página</h3>
+    <div class="footer-line"></div>
+    <p class="rating-label">Tu opinión nos ayuda a mejorar:</p>
+
+    <div class="stars">
+      <i class="fas fa-star" data-value="1"></i>
+      <i class="fas fa-star" data-value="2"></i>
+      <i class="fas fa-star" data-value="3"></i>
+      <i class="fas fa-star" data-value="4"></i>
+      <i class="fas fa-star" data-value="5"></i>
+    </div>
+
+    <textarea class="rating-text" placeholder="Escribe tu opinión..." rows="2"></textarea>
+    <button class="footer-button rating-submit">Enviar valoración</button>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <!-- Contenido inferior -->
+  <div class="footer-container">
+
+    <!-- Columna 1 -->
+    <div class="footer-section">
+      <h2 class="footer-title">Chocolate Vinyls</h2>
+      <div class="footer-line"></div>
+      <p class="footer-description">
+        Vinilos únicos y ediciones especiales — sonido con alma.
+      </p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-spotify"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
- 
-      <div class="footer-divider"></div>
- 
-      <div class="footer-section">
-        <h3 class="footer-subtitle">Enlaces</h3>
-        <ul class="footer-links">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Catálogo</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </div>
- 
-      <div class="footer-divider"></div>
- 
-      <div class="footer-section">
-        <h3 class="footer-subtitle">Síguenos</h3>
-        <div class="social-links">
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
+
+      <div class="footer-bottom">
+        © 2025 <span>Chocolate Vinyls</span>. Diseñado con 🎧 por <strong>Modular Design</strong>.
       </div>
     </div>
-  </footer>
- 
-    <script src="menu_hamburgesa.js"></script>
+
+    <!-- Columna 2 -->
+    <div class="footer-section">
+      <h3 class="footer-subtitle">Navegación</h3>
+      <div class="footer-line"></div>
+      <ul class="footer-links">
+        <li><a href="#index">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3 -->
+    <div class="footer-section">
+      <h3 class="footer-subtitle">Suscríbete</h3>
+      <div class="footer-line"></div>
+      <p class="footer-description">Recibe novedades y lanzamientos exclusivos.</p>
+      <form class="footer-form" onsubmit="return false;">
+        <input type="email" class="footer-input" placeholder="Tu correo electrónico" required>
+        <button type="submit" class="footer-button">Suscribirme</button>
+      </form>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a2e0e9e5c8.js" crossorigin="anonymous"></script>
+
+<!-- Script de estrellas -->
+<script>
+  const stars = document.querySelectorAll('.stars i');
+  let currentRating = 0;
+
+  function updateStars(rating) {
+    stars.forEach((star, index) => {
+      if (index < rating) star.classList.add('filled');
+      else star.classList.remove('filled');
+    });
+  }
+
+  stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+      currentRating = index + 1;
+      updateStars(currentRating);
+    });
+    star.addEventListener('mouseover', () => updateStars(index + 1));
+    star.addEventListener('mouseleave', () => updateStars(currentRating));
+  });
+</script>
+
+
+
+<script src="menu_hamburgesa.js"></script>
+
 </body>
  
 </html>
