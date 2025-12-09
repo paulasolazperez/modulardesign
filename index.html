@@ -1,190 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
- 
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocolate Vinyls</title>
-    <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Cormorant&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chocolate Vinyls</title>
+  <link rel="stylesheet" href="estilos/estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Cormorant&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
- 
+
 <body>
-    <header class="header-inicio">
-    <div class="logo">
-        <img src="images/logo.png" alt="Logo de la empresa">
+  <my-header></my-header>
+
+  <main>
+    <!-- HERO -->
+    <section id="index" class="hero">
+      <div class="hero-fondo"></div>
+      <div class="hero-texto">
+        <h1 class="titulo-hero">Chocolate Vinyls</h1>
+        <p class="eslogan">Sonido eterno, calidad infinita.</p>
+        <a href="#catalogo" class="boton-descubre">Descubre más</a>
+      </div>
+
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo" class="catalogo">
+      <h2>Vinilo Destacado</h2>
+      <div class="vinilo">
+        <img src="images/vinilo-45ani.png" alt="Vinilo 45 Aniversario" class="vinilo-imagen">
+        <div class="vinilo-info">
+          <h3 class="vinilo-titulo">Vinilo 45 Aniversario</h3>
+          <p class="vinilo-descripcion">Edición limitada del vinilo clásico con sonido remasterizado.</p>
+          <p class="vinilo-precio">195,99€</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+
+    <!-- Zona superior: valoración -->
+    <div class="footer-rating-top">
+      <h3 class="footer-subtitle">Valora nuestra página</h3>
+      <div class="footer-line"></div>
+      <p class="rating-label">Tu opinión nos ayuda a mejorar:</p>
+
+      <div class="stars">
+        <i class="fas fa-star" data-value="1"></i>
+        <i class="fas fa-star" data-value="2"></i>
+        <i class="fas fa-star" data-value="3"></i>
+        <i class="fas fa-star" data-value="4"></i>
+        <i class="fas fa-star" data-value="5"></i>
+      </div>
+
+      <textarea class="rating-text" placeholder="Escribe tu opinión..." rows="2"></textarea>
+      <button class="footer-button rating-submit">Enviar valoración</button>
     </div>
 
-    <button class="hamburger-btn" id="hamburger-btn">☰</button>
+    <div class="footer-divider"></div>
 
-    <nav class="menu-lateral" id="menu-lateral">
-        <ul>
-            <li><a href="#index">Inicio</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+    <!-- Contenido inferior -->
+    <div class="footer-container">
+
+      <!-- Columna 1 -->
+      <div class="footer-section">
+        <h2 class="footer-title">Chocolate Vinyls</h2>
+        <div class="footer-line"></div>
+        <p class="footer-description">
+          Vinilos únicos y ediciones especiales — sonido con alma.
+        </p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-spotify"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 <span>Chocolate Vinyls</span>. Diseñado con 🎧 por <strong>Modular Design</strong>.
+        </div>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="footer-section">
+        <h3 class="footer-subtitle">Navegación</h3>
+        <div class="footer-line"></div>
+        <ul class="footer-links">
+          <li><a href="#index">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#historia">Historia</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
-    </nav>
-</header>
- 
-    <main>
-        <!-- HERO -->
-        <section id="index" class="hero">
-            <div class="hero-fondo"></div>
-            <div class="hero-texto">
-                <h1 class="titulo-hero">Chocolate Vinyls</h1>
-                <p class="eslogan">Sonido eterno, calidad infinita.</p>
-                <a href="#catalogo" class="boton-descubre">Descubre más</a>
-            </div>
-            
-        </section>
- 
-        <!-- CATÁLOGO -->
-        <section id="catalogo" class="catalogo">
-            <h2>Vinilo Destacado</h2>
-            <div class="vinilo">
-                <img src="images/vinilo-45ani.png" alt="Vinilo 45 Aniversario" class="vinilo-imagen">
-                <div class="vinilo-info">
-                    <h3 class="vinilo-titulo">Vinilo 45 Aniversario</h3>
-                    <p class="vinilo-descripcion">Edición limitada del vinilo clásico con sonido remasterizado.</p>
-                    <p class="vinilo-precio">195,99€</p>
-                </div>
-            </div>
-        </section>
- 
-        <!-- SOBRE NOSOTROS -->
-        <section id="nosotros" class="nosotros-seccion">
-            <h2 class="nosotros-titulo">Sobre Nosotros</h2>
-            <p class="nosotros-texto">
-                En Chocolate Vinyls amamos la música y el vinilo. Buscamos que cada disco sea una experiencia especial,
-                ofreciendo calidad, diseño y pasión en cada edición. Creemos que la música en vinilo no solo se escucha,
-                se siente, se vive y se comparte.
-            </p>
-        </section>
-
-        <!-- HISTORIA (usa las mismas clases que "Sobre Nosotros" para respetar el estilo) -->
-        <section id="historia" class="historia-seccion">
-            <h2 class="nosotros-titulo">Nuestra Historia</h2>
-            <p class="nosotros-texto">
-                Chocolate Vinyls nació en 1980, en una pequeña tienda de música del centro de Madrid.
-                Lo que comenzó como una pasión por los discos clásicos y las portadas icónicas se convirtió en
-                una marca dedicada a preservar el arte del sonido analógico.
-            </p>
-            <p class="nosotros-texto">
-                Con el paso de los años, hemos crecido junto a generaciones de amantes del vinilo,
-                manteniendo viva la esencia de la música tangible: esa que se toca, se huele y se escucha
-                con el alma. Cada edición que lanzamos es un tributo a la historia de la música
-                y a quienes la mantienen viva.
-            </p>
-        </section>
-
-
-    </main>
- 
-<footer class="footer">
-
-  <!-- Zona superior: valoración -->
-  <div class="footer-rating-top">
-    <h3 class="footer-subtitle">Valora nuestra página</h3>
-    <div class="footer-line"></div>
-    <p class="rating-label">Tu opinión nos ayuda a mejorar:</p>
-
-    <div class="stars">
-      <i class="fas fa-star" data-value="1"></i>
-      <i class="fas fa-star" data-value="2"></i>
-      <i class="fas fa-star" data-value="3"></i>
-      <i class="fas fa-star" data-value="4"></i>
-      <i class="fas fa-star" data-value="5"></i>
-    </div>
-
-    <textarea class="rating-text" placeholder="Escribe tu opinión..." rows="2"></textarea>
-    <button class="footer-button rating-submit">Enviar valoración</button>
-  </div>
-
-  <div class="footer-divider"></div>
-
-  <!-- Contenido inferior -->
-  <div class="footer-container">
-
-    <!-- Columna 1 -->
-    <div class="footer-section">
-      <h2 class="footer-title">Chocolate Vinyls</h2>
-      <div class="footer-line"></div>
-      <p class="footer-description">
-        Vinilos únicos y ediciones especiales — sonido con alma.
-      </p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-spotify"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
 
-      <div class="footer-bottom">
-        © 2025 <span>Chocolate Vinyls</span>. Diseñado con 🎧 por <strong>Modular Design</strong>.
+      <!-- Columna 3 -->
+      <div class="footer-section">
+        <h3 class="footer-subtitle">Suscríbete</h3>
+        <div class="footer-line"></div>
+        <p class="footer-description">Recibe novedades y lanzamientos exclusivos.</p>
+        <form class="footer-form" onsubmit="return false;">
+          <input type="email" class="footer-input" placeholder="Tu correo electrónico" required>
+          <button type="submit" class="footer-button">Suscribirme</button>
+        </form>
       </div>
+
     </div>
+  </footer>
 
-    <!-- Columna 2 -->
-    <div class="footer-section">
-      <h3 class="footer-subtitle">Navegación</h3>
-      <div class="footer-line"></div>
-      <ul class="footer-links">
-        <li><a href="#index">Inicio</a></li>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#historia">Historia</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2e0e9e5c8.js" crossorigin="anonymous"></script>
 
-    <!-- Columna 3 -->
-    <div class="footer-section">
-      <h3 class="footer-subtitle">Suscríbete</h3>
-      <div class="footer-line"></div>
-      <p class="footer-description">Recibe novedades y lanzamientos exclusivos.</p>
-      <form class="footer-form" onsubmit="return false;">
-        <input type="email" class="footer-input" placeholder="Tu correo electrónico" required>
-        <button type="submit" class="footer-button">Suscribirme</button>
-      </form>
-    </div>
+  <!-- Script de estrellas -->
+  <script>
+    const stars = document.querySelectorAll('.stars i');
+    let currentRating = 0;
 
-  </div>
-</footer>
+    function updateStars(rating) {
+      stars.forEach((star, index) => {
+        if (index < rating) star.classList.add('filled');
+        else star.classList.remove('filled');
+      });
+    }
 
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a2e0e9e5c8.js" crossorigin="anonymous"></script>
-
-<!-- Script de estrellas -->
-<script>
-  const stars = document.querySelectorAll('.stars i');
-  let currentRating = 0;
-
-  function updateStars(rating) {
     stars.forEach((star, index) => {
-      if (index < rating) star.classList.add('filled');
-      else star.classList.remove('filled');
+      star.addEventListener('click', () => {
+        currentRating = index + 1;
+        updateStars(currentRating);
+      });
+      star.addEventListener('mouseover', () => updateStars(index + 1));
+      star.addEventListener('mouseleave', () => updateStars(currentRating));
     });
-  }
-
-  stars.forEach((star, index) => {
-    star.addEventListener('click', () => {
-      currentRating = index + 1;
-      updateStars(currentRating);
-    });
-    star.addEventListener('mouseover', () => updateStars(index + 1));
-    star.addEventListener('mouseleave', () => updateStars(currentRating));
-  });
-</script>
+  </script>
 
 
 
-<script src="menu_hamburgesa.js"></script>
+  <script src="menu_hamburgesa.js"></script>
 
 </body>
- 
+
 </html>
