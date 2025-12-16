@@ -62,10 +62,27 @@ th, td { padding: 8px; border: 1px solid #ccc; text-align: center; }
 img { width: 60px; height: 60px; object-fit: cover; }
 input, textarea { width: 90%; padding: 7px; margin-top: 5px; }
 button { padding: 6px 12px; cursor: pointer; }
+home-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 26px;
+    text-decoration: none;
+    color: #000;
+    background: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+home-icon:hover {
+    background: #ddd;
+}
 </style>
  
 </head>
 <body>
+<a href="index.html" class="home-icon" title="Volver al inicio">🏠</a>
  
 <h1>Gestor de Vinilos</h1>
  
