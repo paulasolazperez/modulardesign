@@ -135,3 +135,57 @@ main{flex:1;}
 
 /* Responsivo */
 @media (max-width: 900px){.footer-container{flex-direction:column;}.footer-container::before,.footer-container::after{display:none;}.footer-section{padding:1rem 0;}.footer-form{flex-direction:column;align-items:stretch;}.footer-input{width:100%;}.footer-button, .rating-submit, .boton-descubre{width:100%;margin-top:0.6rem;}}
+
+/* === MEJORA VISUAL NOSOTROS / HISTORIA === */
+.nosotros-card {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 4rem 3rem;
+    border-radius: 30px;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.02),
+        rgba(0,0,0,0.4)
+    );
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* Línea decorativa bajo títulos */
+.nosotros-linea {
+    width: 80px;
+    height: 4px;
+    background-color: var(--botones);
+    margin: 0 auto 2.5rem auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(225,6,0,0.6);
+}
+
+/* Mejora de texto */
+.nosotros-texto {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+}
+
+/* Separación entre párrafos */
+.nosotros-texto + .nosotros-texto {
+    margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nosotros-card {
+        padding: 3rem 1.8rem;
+        margin: 3rem 1rem;
+    }
+
+    .nosotros-titulo {
+        font-size: 2.1rem;
+    }
+
+    .nosotros-texto {
+        font-size: 1.1rem;
+    }
+}
