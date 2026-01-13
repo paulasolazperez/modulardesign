@@ -42,7 +42,7 @@ $resultado = $conn->query($sql);
 
         <div class="vinilo-card">
             <!-- 🔑 CLAVE: uploads + nombre del archivo -->
-            <img src="images/<?php echo $vinilo['foto']; ?>"
+            <img src="images/images_vinilos/<?php echo $vinilo['foto']; ?>"
                  alt="<?php echo htmlspecialchars($vinilo['nom_vinilo']); ?>">
 
             <h3><?php echo htmlspecialchars($vinilo['nom_vinilo']); ?></h3>

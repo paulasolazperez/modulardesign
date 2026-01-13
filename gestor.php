@@ -10,7 +10,7 @@ $foto = "";
 if (!empty($_FILES['foto']['name'])) {
 
     $nombreFoto = time() . "_" . basename($_FILES['foto']['name']);
-    $rutaDestino = "images/" . $nombreFoto;
+    $rutaDestino = "images/images_vinilos/" . $nombreFoto;
 
     move_uploaded_file($_FILES['foto']['tmp_name'], $rutaDestino);
 
@@ -142,7 +142,7 @@ home-icon:hover {
  
 <?php while ($v = $vinilos->fetch_assoc()) { ?>
 <tr>
-<td><img src="<?= $v['foto'] ?>"></td>
+<td><img src="images/images_vinilos/<?= $v['foto'] ?>"></td>
 <td><?= $v['nom_vinilo'] ?></td>
 <td><?= $v['nom_artista'] ?></td>
 <td><?= $v['descripcion'] ?></td>
