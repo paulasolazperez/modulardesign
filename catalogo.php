@@ -36,19 +36,28 @@ $resultado = $conn->query($sql);
 </header>
 
 <main class="catalogo">
+
 <?php if ($resultado->num_rows > 0): ?>
     <?php while ($vinilo = $resultado->fetch_assoc()): ?>
+
         <div class="vinilo-card">
-            <img src="uploads/<?php echo $vinilo['foto']; ?>" alt="<?php echo $vinilo['nom_vinilo']; ?>">
-            <h3><?php echo $vinilo['nom_vinilo']; ?></h3>
-            <p><?php echo $vinilo['nom_artista']; ?></p>
-            <p><?php echo $vinilo['descripcion']; ?></p>
-            <span class="precio"><?php echo number_format($vinilo['precio'], 2); ?> €</span>
+            <!-- 🔑 CLAVE: uploads + nombre del archivo -->
+            <img src="uploads/<?php echo $vinilo['foto']; ?>"
+                 alt="<?php echo htmlspecialchars($vinilo['nom_vinilo']); ?>">
+
+            <h3><?php echo htmlspecialchars($vinilo['nom_vinilo']); ?></h3>
+            <p><?php echo htmlspecialchars($vinilo['nom_artista']); ?></p>
+            <p><?php echo htmlspecialchars($vinilo['descripcion']); ?></p>
+            <span class="precio">
+                <?php echo number_format($vinilo['precio'], 2); ?> €
+            </span>
         </div>
+
     <?php endwhile; ?>
 <?php else: ?>
     <p>No hay vinilos disponibles.</p>
 <?php endif; ?>
+
 </main>
 
 </body>
