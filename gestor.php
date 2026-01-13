@@ -6,17 +6,11 @@ session_start();
 if (isset($_POST['add_vinilo'])) {
  
     // Guardar imagen
-$foto = "";
-if (!empty($_FILES['foto']['name'])) {
+$nombreFoto = basename($_FILES['foto']['name']);
+$rutaDestino = "images/images_vinilos/" . $nombreFoto;
 
-    $nombreFoto = time() . "_" . basename($_FILES['foto']['name']);
-    $rutaDestino = "images/images_vinilos/" . $nombreFoto;
-
-    move_uploaded_file($_FILES['foto']['tmp_name'], $rutaDestino);
-
-    // SOLO el nombre va a la BD
-    $foto = $nombreFoto;
-}
+move_uploaded_file($_FILES['foto']['tmp_name'], $rutaDestino);
+$foto = $nombreFoto;
  
     $nom_vinilo = $_POST['nom_vinilo'];
     $nom_artista = $_POST['nom_artista'];
