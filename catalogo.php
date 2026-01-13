@@ -37,28 +37,50 @@ $resultado = $conn->query($sql);
 
 <main class="catalogo">
 
-<?php if ($resultado->num_rows > 0): ?>
-    <?php while ($vinilo = $resultado->fetch_assoc()): ?>
+    <h2>Nuestro catálogo de vinilos</h2>
 
-        <div class="vinilo-card">
-            <!-- 🔑 CLAVE: uploads + nombre del archivo -->
-            <img src="images/images_vinilos/<?php echo $vinilo['foto']; ?>"
-                 alt="<?php echo htmlspecialchars($vinilo['nom_vinilo']); ?>">
+    <?php if ($resultado->num_rows > 0): ?>
+        <?php while ($vinilo = $resultado->fetch_assoc()): ?>
 
-            <h3><?php echo htmlspecialchars($vinilo['nom_vinilo']); ?></h3>
-            <p><?php echo htmlspecialchars($vinilo['nom_artista']); ?></p>
-            <p><?php echo htmlspecialchars($vinilo['descripcion']); ?></p>
-            <span class="precio">
-                <?php echo number_format($vinilo['precio'], 2); ?> €
-            </span>
-        </div>
+            <article class="vinilo">
 
-    <?php endwhile; ?>
-<?php else: ?>
-    <p>No hay vinilos disponibles.</p>
-<?php endif; ?>
+                <!-- Imagen -->
+                <img
+                    class="vinilo-imagen"
+                    src="images/images_vinilos/<?php echo htmlspecialchars($vinilo['foto']); ?>"
+                    alt="<?php echo htmlspecialchars($vinilo['nom_vinilo']); ?>"
+                >
+
+                <!-- Info -->
+                <div class="vinilo-info">
+                    <h3 class="vinilo-titulo">
+                        <?php echo htmlspecialchars($vinilo['nom_vinilo']); ?>
+                    </h3>
+
+                    <p class="vinilo-descripcion">
+                        <strong><?php echo htmlspecialchars($vinilo['nom_artista']); ?></strong><br><br>
+                        <?php echo htmlspecialchars($vinilo['descripcion']); ?>
+                    </p>
+
+                    <span class="vinilo-precio">
+                        <?php echo number_format($vinilo['precio'], 2); ?> €
+                    </span>
+
+                    <div style="margin-top:2rem;">
+                        <a href="#" class="boton-descubre">
+                            Ver vinilo
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+
+        <?php endwhile; ?>
+    <?php else: ?>
+        <p>No hay vinilos disponibles.</p>
+    <?php endif; ?>
 
 </main>
-
+<script src="menu_hamburgesa.js"></script>
 </body>
 </html>
