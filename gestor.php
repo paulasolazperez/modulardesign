@@ -24,8 +24,8 @@ if (!empty($_FILES['foto']['name'])) {
     $precio = $_POST['precio'];
     $año = $_POST['año']; // Tipo DATE → yyyy-mm-dd
  
-    $sql = "INSERT INTO vinilos (foto, nom_vinilo, nom_artista, descripcion, precio, año)
-            VALUES ('$foto', '$nom_vinilo', '$nom_artista', '$descripcion', '$precio', '$año')";
+$sql = "INSERT INTO vinilos (foto, nom_vinilo, nom_artista, descripcion, precio, `año`)
+        VALUES ('$foto', '$nom_vinilo', '$nom_artista', '$descripcion', '$precio', '$año')";
  
     $conn->query($sql);
 }
