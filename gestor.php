@@ -10,7 +10,7 @@ $foto = "";
 if (!empty($_FILES['foto']['name'])) {
 
     $nombreFoto = time() . "_" . basename($_FILES['foto']['name']);
-    $rutaDestino = "uploads/" . $nombreFoto;
+    $rutaDestino = "images/" . $nombreFoto;
 
     move_uploaded_file($_FILES['foto']['tmp_name'], $rutaDestino);
 
