@@ -42,16 +42,15 @@ $resultado = $conn->query($sql);
     <?php if ($resultado->num_rows > 0): ?>
         <?php while ($vinilo = $resultado->fetch_assoc()): ?>
 
-            <article class="vinilo">
+            <!-- 🔑 CLASE EXTRA SOLO PARA EL CATÁLOGO -->
+            <article class="vinilo catalogo-vinilo">
 
-                <!-- Imagen -->
                 <img
                     class="vinilo-imagen"
                     src="images/images_vinilos/<?php echo htmlspecialchars($vinilo['foto']); ?>"
                     alt="<?php echo htmlspecialchars($vinilo['nom_vinilo']); ?>"
                 >
 
-                <!-- Info -->
                 <div class="vinilo-info">
                     <h3 class="vinilo-titulo">
                         <?php echo htmlspecialchars($vinilo['nom_vinilo']); ?>
@@ -67,9 +66,8 @@ $resultado = $conn->query($sql);
                     </span>
 
                     <div style="margin-top:2rem;">
-                        <a href="#" class="boton-descubre">
-                            Ver vinilo
-                        </a>
+                        <a href="add_carrito.php?id=<?php echo $vinilo['id_vinilo']; ?>" class="boton-descubre">
+                        Añadir al carrito</a>
                     </div>
                 </div>
 
@@ -81,6 +79,7 @@ $resultado = $conn->query($sql);
     <?php endif; ?>
 
 </main>
+
 <script src="menu_hamburgesa.js"></script>
 </body>
 </html>

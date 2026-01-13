@@ -60,37 +60,11 @@ body{background-color:var(--fondogen);display:flex;flex-direction:column;}
 
 /* ========== CATÁLOGO ========== */
 main{flex:1;}
-.catalogo{
-    padding:3rem;
-    margin:0;
-    background-color:var(--fondogen);
-    color:var(--textoprin);
-
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:3rem;
-
-    align-items:start;
-}
-.catalogo h2{margin-bottom:3rem;font-size:2.5rem;text-align:center;text-shadow:2px 2px 5px rgba(0,0,0,0.7);grid-column: 1 / -1;}
-.vinilo{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:2rem;
-
-    background-color:var(--fondosec);
-    border-radius:25px;
-    overflow:hidden;
-
-    transition:transform 0.3s ease, box-shadow 0.3s ease;
-}
+.catalogo{padding:3rem;margin:0;height:100vh;background-color:var(--fondogen);color:var(--textoprin);display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.catalogo h2{margin-bottom:3rem;font-size:2.5rem;text-align:center;text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
+.vinilo{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2rem;background-color:var(--fondosec);border-radius:25px;overflow:hidden;transition:transform 0.3s ease,box-shadow 0.3s ease;max-width:1100px;}
 .vinilo:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.6);}
-.vinilo-imagen{
-    width:100%;
-    height:auto;
-    object-fit:cover;
-}
+.vinilo-imagen{width:100%;max-width:400px;height:auto;display:block;}
 .vinilo-info{flex:1;display:flex;flex-direction:column;justify-content:center;padding:3rem;}
 .vinilo-titulo{font-size:2rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,0.7);color:var(--precios);}
 .vinilo-descripcion{font-size:1.2rem;margin-bottom:1.5rem;line-height:1.5;color:var(--textosec);}
@@ -120,6 +94,7 @@ main{flex:1;}
 /* BOTONES DEL FOOTER (Se sobrescriben para usar el nuevo diseño unificado) */
 .footer-button, .rating-submit {
     /* HEREDA EL ESTILO UNIFICADO */
+    @extend .boton-base;
     height: 42px; /* Propiedad específica para el footer */
     padding: 0 1.2rem;
     margin: 0;
@@ -198,6 +173,214 @@ main{flex:1;}
     transform: scale(1.03);
 }
 
+/* ================== CATÁLOGO EN 2 COLUMNAS (SIN TOCAR DESTACADO) ================== */
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: start;
+    padding-top: 7rem; /* para que no lo tape el header */
+}
+
+/* El título ocupa las 2 columnas */
+.catalogo h2 {
+    grid-column: 1 / -1;
+}
+
+/* SOLO tarjetas del catálogo */
+.catalogo-vinilo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imagen solo catálogo */
+.catalogo-vinilo .vinilo-imagen {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ================== FIX DEFINITIVO CATÁLOGO ================== */
+
+/* Cada tarjeta del catálogo es independiente */
+.catalogo-vinilo {
+    overflow: hidden;
+}
+
+/* RESETEO TOTAL de la imagen SOLO en el catálogo */
+.catalogo-vinilo .vinilo-imagen {
+    position: static !important;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    transform: none;
+}
+
+/* Separación clara entre tarjetas */
+.catalogo-vinilo + .catalogo-vinilo {
+    margin-top: 0;
+}
+
+/* ================== FIX REAL CATÁLOGO ================== */
+
+/* El catálogo SÍ es grid (anula flex y height) */
+.catalogo {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    align-items: start;
+    justify-content: stretch;
+
+    height: auto !important;
+    padding-top: 7rem; /* para el header */
+}
+
+/* El título ocupa las dos columnas */
+.catalogo h2 {
+    grid-column: 1 / -1;
+}
+
+/* SOLO las tarjetas del catálogo */
+.catalogo-vinilo {
+    display: block;            /* 🔑 NO flex */
+    max-width: 100%;
+}
+
+/* Imagen normal, sin herencias raras */
+.catalogo-vinilo .vinilo-imagen {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    position: static;
+}
+
+/* ================== CARRITO ================== */
+
+.carrito-layout {
+    padding: 7rem 3rem 3rem;
+    color: white;
+}
+
+.carrito-titulo {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.carrito-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* LISTA */
+.carrito-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* TARJETA */
+.carrito-card {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+/* IMAGEN */
+.carrito-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* INFO */
+.carrito-card-info h3 {
+    color: var(--precios);
+    margin-bottom: 0.5rem;
+}
+
+.carrito-descripcion {
+    color: var(--textosec);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.carrito-cantidad {
+    font-size: 0.9rem;
+}
+
+.carrito-eliminar {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+/* PRECIO DERECHA */
+.carrito-precio-derecha {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--precios);
+    white-space: nowrap;
+}
+
+/* RESUMEN */
+.carrito-resumen {
+    position: sticky;
+    top: 7rem;
+
+    background: #111;
+    padding: 2rem;
+    border-radius: 20px;
+
+    height: fit-content;
+}
+
+.carrito-resumen h3 {
+    color: var(--precios);
+    margin-bottom: 2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .carrito-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .carrito-resumen {
+        position: static;
+    }
+}
+
+
+
+/* En móvil: 1 columna */
+@media (max-width: 900px) {
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive: móvil a 1 columna */
+@media (max-width: 600px) {
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .nosotros-flex,
@@ -208,8 +391,5 @@ main{flex:1;}
 
     .nosotros-imagen {
         max-width: 100%;
-    }
-        .catalogo {
-        grid-template-columns: 1fr;
     }
 }
