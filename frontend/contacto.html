@@ -53,11 +53,79 @@
     </section>
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
-    <div class="footer-bottom">
-        <p>&copy; 2026 <span>Mi Proyecto</span>. Todos los derechos reservados.</p>
+
+  <!-- Zona superior: valoración -->
+  <div class="footer-rating-top">
+    <h3 class="footer-subtitle">Valora nuestra página</h3>
+    <div class="footer-line"></div>
+    <p class="rating-label">Tu opinión nos ayuda a mejorar:</p>
+
+    <div class="stars">
+      <i class="fas fa-star" data-value="1"></i>
+      <i class="fas fa-star" data-value="2"></i>
+      <i class="fas fa-star" data-value="3"></i>
+      <i class="fas fa-star" data-value="4"></i>
+      <i class="fas fa-star" data-value="5"></i>
     </div>
+
+    <textarea class="rating-text" placeholder="Escribe tu opinión..." rows="2"></textarea>
+    <button class="footer-button rating-submit">Enviar valoración</button>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-container">
+
+    <!-- Columna 1 -->
+    <div class="footer-section">
+      <h2 class="footer-title">Chocolate Vinyls</h2>
+      <div class="footer-line"></div>
+      <p class="footer-description">
+        Vinilos únicos y ediciones especiales — sonido con alma.
+      </p>
+
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-spotify"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 <span>Chocolate Vinyls</span>. Diseñado con 🎧 por
+        <strong>Modular Design</strong>.
+      </div>
+    </div>
+
+    <!-- Columna 2 -->
+    <div class="footer-section">
+      <h3 class="footer-subtitle">Navegación</h3>
+      <div class="footer-line"></div>
+      <ul class="footer-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="../backend/catalogo/catalogo.php">Catálogo</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="nosotros.html">Historia</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3 -->
+    <div class="footer-section">
+      <h3 class="footer-subtitle">Suscríbete</h3>
+      <div class="footer-line"></div>
+      <p class="footer-description">
+        Recibe novedades y lanzamientos exclusivos.
+      </p>
+      <form class="footer-form" onsubmit="return false;">
+        <input type="email" class="footer-input"
+               placeholder="Tu correo electrónico" required>
+        <button type="submit" class="footer-button">Suscribirme</button>
+      </form>
+    </div>
+
+  </div>
 </footer>
 
 <!-- JavaScript -->
