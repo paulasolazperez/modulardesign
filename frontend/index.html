@@ -5,170 +5,160 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chocolate Vinyls</title>
-  <link rel="stylesheet" href="estilos/estilos.css">
+
+  <link rel="stylesheet" href="css/estilos/estilos.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Cormorant&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-  <header class="header-inicio">
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/logo.png" alt="Logo de la empresa">
-      </a>
+
+<header class="header-inicio">
+  <div class="logo">
+    <a href="index.html">
+      <img src="img/logo.png" alt="Logo de la empresa">
+    </a>
+  </div>
+
+  <button class="hamburger-btn" id="hamburger-btn">☰</button>
+
+  <nav class="menu-lateral" id="menu-lateral">
+    <ul>
+      <li><a href="#index">Inicio</a></li>
+      <li><a href="../backend/catalogo/catalogo.php">Catálogo</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <a href="../backend/auth/login.php" class="boton-descubre">Gestión catálogo</a>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section id="index" class="hero">
+    <div class="hero-fondo"></div>
+    <div class="hero-texto">
+      <h1 class="titulo-hero">Chocolate Vinyls</h1>
+      <p class="eslogan">Sonido eterno, calidad infinita.</p>
+      <a href="../backend/catalogo/catalogo.php" class="boton-descubre">Descubre más</a>
     </div>
+  </section>
 
-    <button class="hamburger-btn" id="hamburger-btn">☰</button>
+  <section id="catalogo" class="catalogo">
+    <h2>Vinilos Destacados</h2>
 
-    <nav class="menu-lateral" id="menu-lateral">
-      <ul>
-        <li><a href="#logo">Inicio</a></li>
-        <li><a href="catalogo.php">Catálogo</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <a href="login.php" class="boton-descubre">Gestión catálogo</a>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section id="index" class="hero">
-      <div class="hero-fondo"></div>
-      <div class="hero-texto">
-        <h1 class="titulo-hero">Chocolate Vinyls</h1>
-        <p class="eslogan">Sonido eterno, calidad infinita.</p>
-        <a href="catalogo.php" class="boton-descubre">Descubre más</a>
-      </div>
-
-    </section>
-
-    <!-- CATÁLOGO -->
-    <section id="catalogo" class="catalogo">
-      <h2>Vinilos Destacados</h2>
-      <div class="vinilo">
-        <img src="images/images_vinilos/vinilo_13dic.png" alt="Vinilo 45 Aniversario" class="vinilo-imagen">
-        <div class="vinilo-info">
-          <h3 class="vinilo-titulo">Vinilo 45 Aniversario</h3>
-          <p class="vinilo-descripcion">Vinilo sesión de noche del 45 Aniversario Discoteca Chocolate</p>
-          <p class="vinilo-precio">195,99€</p>
-        </div>
-      </div>
-      <div class="vinilo">
-        <img src="images/images_vinilos/vinilo_10ene.png" alt="Vinilo 45 Aniversario" class="vinilo-imagen">
-        <div class="vinilo-info">
-          <h3 class="vinilo-titulo">Vinilo 90 Aniversario Cassalla Cerveró</h3>
-          <p class="vinilo-descripcion">Vinilo sesión noche de la Discoteca Chocolate</p>
-          <p class="vinilo-precio">159,99€</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-
-    <!-- Zona superior: valoración -->
-    <div class="footer-rating-top">
-      <h3 class="footer-subtitle">Valora nuestra página</h3>
-      <div class="footer-line"></div>
-      <p class="rating-label">Tu opinión nos ayuda a mejorar:</p>
-
-      <div class="stars">
-        <i class="fas fa-star" data-value="1"></i>
-        <i class="fas fa-star" data-value="2"></i>
-        <i class="fas fa-star" data-value="3"></i>
-        <i class="fas fa-star" data-value="4"></i>
-        <i class="fas fa-star" data-value="5"></i>
-      </div>
-
-      <textarea class="rating-text" placeholder="Escribe tu opinión..." rows="2"></textarea>
-      <button class="footer-button rating-submit">Enviar valoración</button>
-    </div>
-
-    <div class="footer-divider"></div>
-
-    <!-- Contenido inferior -->
-    <div class="footer-container">
-
-      <!-- Columna 1 -->
-      <div class="footer-section">
-        <h2 class="footer-title">Chocolate Vinyls</h2>
-        <div class="footer-line"></div>
-        <p class="footer-description">
-          Vinilos únicos y ediciones especiales — sonido con alma.
+    <div class="vinilo">
+      <img src="img/images_vinilos/vinilo_13dic.png"
+           alt="Vinilo 45 Aniversario"
+           class="vinilo-imagen">
+      <div class="vinilo-info">
+        <h3 class="vinilo-titulo">Vinilo 45 Aniversario</h3>
+        <p class="vinilo-descripcion">
+          Vinilo sesión de noche del 45 Aniversario Discoteca Chocolate
         </p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-spotify"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-
-        <div class="footer-bottom">
-          © 2025 <span>Chocolate Vinyls</span>. Diseñado con 🎧 por <strong>Modular Design</strong>.
-        </div>
+        <p class="vinilo-precio">195,99 €</p>
       </div>
-
-      <!-- Columna 2 -->
-      <div class="footer-section">
-        <h3 class="footer-subtitle">Navegación</h3>
-        <div class="footer-line"></div>
-        <ul class="footer-links">
-          <li><a href="#index">Inicio</a></li>
-          <li><a href="#catalogo">Catálogo</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#historia">Historia</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-
-      <!-- Columna 3 -->
-      <div class="footer-section">
-        <h3 class="footer-subtitle">Suscríbete</h3>
-        <div class="footer-line"></div>
-        <p class="footer-description">Recibe novedades y lanzamientos exclusivos.</p>
-        <form class="footer-form" onsubmit="return false;">
-          <input type="email" class="footer-input" placeholder="Tu correo electrónico" required>
-          <button type="submit" class="footer-button">Suscribirme</button>
-        </form>
-      </div>
-
     </div>
-  </footer>
 
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a2e0e9e5c8.js" crossorigin="anonymous"></script>
+    <div class="vinilo">
+      <img src="img/images_vinilos/vinilo_10ene.png"
+           alt="Vinilo 90 Aniversario Cassalla Cerveró"
+           class="vinilo-imagen">
+      <div class="vinilo-info">
+        <h3 class="vinilo-titulo">Vinilo 90 Aniversario Cassalla Cerveró</h3>
+        <p class="vinilo-descripcion">
+          Vinilo sesión noche de la Discoteca Chocolate
+        </p>
+        <p class="vinilo-precio">159,99 €</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Script de estrellas -->
-  <script>
-    const stars = document.querySelectorAll('.stars i');
-    let currentRating = 0;
+</main>
 
-    function updateStars(rating) {
-      stars.forEach((star, index) => {
-        if (index < rating) star.classList.add('filled');
-        else star.classList.remove('filled');
-      });
-    }
+<footer class="footer">
 
-    stars.forEach((star, index) => {
-      star.addEventListener('click', () => {
-        currentRating = index + 1;
-        updateStars(currentRating);
-      });
-      star.addEventListener('mouseover', () => updateStars(index + 1));
-      star.addEventListener('mouseleave', () => updateStars(currentRating));
-    });
-  </script>
+  <!-- Zona superior: valoración -->
+  <div class="footer-rating-top">
+    <h3 class="footer-subtitle">Valora nuestra página</h3>
+    <div class="footer-line"></div>
+    <p class="rating-label">Tu opinión nos ayuda a mejorar:</p>
 
+    <div class="stars">
+      <i class="fas fa-star" data-value="1"></i>
+      <i class="fas fa-star" data-value="2"></i>
+      <i class="fas fa-star" data-value="3"></i>
+      <i class="fas fa-star" data-value="4"></i>
+      <i class="fas fa-star" data-value="5"></i>
+    </div>
 
+    <textarea class="rating-text" placeholder="Escribe tu opinión..." rows="2"></textarea>
+    <button class="footer-button rating-submit">Enviar valoración</button>
+  </div>
 
-  <script src="menu_hamburgesa.js"></script>
+  <div class="footer-divider"></div>
+
+  <div class="footer-container">
+
+    <!-- Columna 1 -->
+    <div class="footer-section">
+      <h2 class="footer-title">Chocolate Vinyls</h2>
+      <div class="footer-line"></div>
+      <p class="footer-description">
+        Vinilos únicos y ediciones especiales — sonido con alma.
+      </p>
+
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-spotify"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 <span>Chocolate Vinyls</span>. Diseñado con 🎧 por
+        <strong>Modular Design</strong>.
+      </div>
+    </div>
+
+    <!-- Columna 2 -->
+    <div class="footer-section">
+      <h3 class="footer-subtitle">Navegación</h3>
+      <div class="footer-line"></div>
+      <ul class="footer-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="../backend/catalogo/catalogo.php">Catálogo</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="nosotros.html">Historia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3 -->
+    <div class="footer-section">
+      <h3 class="footer-subtitle">Suscríbete</h3>
+      <div class="footer-line"></div>
+      <p class="footer-description">
+        Recibe novedades y lanzamientos exclusivos.
+      </p>
+      <form class="footer-form" onsubmit="return false;">
+        <input type="email" class="footer-input"
+               placeholder="Tu correo electrónico" required>
+        <button type="submit" class="footer-button">Suscribirme</button>
+      </form>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ✅ JS CORRECTO SEGÚN TU ESTRUCTURA -->
+<script src="../backend/menu_hamburgesa.js"></script>
 
 </body>
-
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "conexion.php";
+include "../conexion.php";
  
 $user = $_POST['user'];
 $password = $_POST['password'];
@@ -16,10 +16,10 @@ if ($resultado->num_rows > 0) {
         $_SESSION['id_user'] = $fila['id_user'];
         $_SESSION['user'] = $fila['user'];
  
-        header("Location: gestor.php");
+        header("Location: ../catalogo/gestor.php");
         exit;
     }
 }
  
-echo "Usuario o contraseña incorrectos. <a href='index.html'>Intentar de nuevo</a>";
+echo "Usuario o contraseña incorrectos. <a href='../../frontend/index.html'>Intentar de nuevo</a>";
 ?>

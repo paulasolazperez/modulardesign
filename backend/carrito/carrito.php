@@ -9,14 +9,14 @@ $total = 0;
 <head>
 <meta charset="UTF-8">
 <title>Carrito</title>
-<link rel="stylesheet" href="estilos/estilos.css">
+<link rel="stylesheet" href="../../frontend/css/estilos/estilos.css">
 </head>
 <body>
 
 <header class="header-inicio">
   <div class="logo">
-    <a href="index.html">
-      <img src="images/logo.png" alt="Logo">
+    <a href="../../frontend/index.html">
+      <img src="../../frontend/img/logo.png" alt="Logo">
     </a>
   </div>
 
@@ -24,11 +24,11 @@ $total = 0;
 
   <nav class="menu-lateral" id="menu-lateral">
     <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="catalogo.php">Catálogo</a></li>
-      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="../../frontend/index.html">Inicio</a></li>
+      <li><a href="../catalogo/catalogo.php">Catálogo</a></li>
+      <li><a href="../../frontend/nosotros.html">Nosotros</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <a href="login.php" class="boton-descubre">Gestión catálogo</a>
+      <a href="../auth/login.php" class="boton-descubre">Gestión catálogo</a>
     </ul>
   </nav>
 </header>
@@ -55,7 +55,7 @@ $total = 0;
                 <article class="carrito-card">
 
                     <img class="carrito-img"
-                         src="images/images_vinilos/<?php echo htmlspecialchars($item['foto']); ?>"
+                         src="../../frontend/img/images_vinilos/<?php echo htmlspecialchars($item['foto']); ?>"
                          alt="<?php echo htmlspecialchars($item['nombre']); ?>">
 
                     <div class="carrito-card-info">
@@ -91,7 +91,7 @@ $total = 0;
         <aside class="carrito-resumen">
             <h3>Total: <?php echo number_format($total, 2); ?> €</h3>
 
-            <a href="catalogo.php" class="boton-descubre">
+            <a href="../catalogo/catalogo.php" class="boton-descubre">
                 Seguir comprando
             </a>
         </aside>
@@ -100,6 +100,6 @@ $total = 0;
 
 </main>
 
-<script src="menu_hamburgesa.js"></script>
+<script src="../menu_hamburgesa.js"></script>
 </body>
 </html>
