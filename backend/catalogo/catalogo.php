@@ -32,7 +32,7 @@ $resultado = $conn->query($sql);
             <li><a href="../../frontend/index.html">Inicio</a></li>
             <li><a href="catalogo.php">Catálogo</a></li>
             <li><a href="../../frontend/nosotros.html">Nosotros</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="../../frontend/contacto.html">Contacto</a></li>
             <a href="../backend/auth/login.php" class="boton-descubre">Gestión catálogo</a>
         </ul>
     </nav>
@@ -133,11 +133,10 @@ $resultado = $conn->query($sql);
       <h3 class="footer-subtitle">Navegación</h3>
       <div class="footer-line"></div>
       <ul class="footer-links">
-        <li><a href="#index">Inicio</a></li>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="#historia">Historia</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="../../frontend/index.html">Inicio</a></li>
+        <li><a href="catalogo.php">Catálogo</a></li>
+        <li><a href="../../frontend/nosotros.html">Nosotros</a></li>
+        <li><a href="../../frontend/contacto.html">Contacto</a></li>
       </ul>
     </div>
 
