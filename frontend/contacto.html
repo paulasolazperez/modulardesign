@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/estilos/estilos.css">
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="header-inicio">
+    <div class="logo">
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo de la empresa">
+        </a>
+    </div>
+
+    <button class="hamburger-btn" id="hamburger-btn">☰</button>
+
+    <nav class="menu-lateral" id="menu-lateral">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.php">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="login.php" class="boton-descubre">Gestión catálogo</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="contacto-layout">
+    <section class="contacto-card">
+        <h1>Contacto</h1>
+        <p>Si tienes alguna duda o consulta, rellena el siguiente formulario.</p>
+
+        <form class="contacto-form" action="#" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+
+            <button type="submit" class="boton-base">Enviar mensaje</button>
+        </form>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-bottom">
+        <p>&copy; 2026 <span>Mi Proyecto</span>. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="../backend/menu_hamburgesa.js"></script>
+
+</body>
+</html>
