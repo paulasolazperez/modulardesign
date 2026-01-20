@@ -393,3 +393,86 @@ main{flex:1;}
         max-width: 100%;
     }
 }
+
+/* ================== CONTACTO ================== */
+
+.contacto-layout {
+    padding: 7rem 2rem 4rem; /* respeta header fijo */
+    color: var(--textoprin);
+    display: flex;
+    justify-content: center;
+}
+
+.contacto-card {
+    background-color: var(--fondosec);
+    padding: 3rem;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+.contacto-card h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--precios);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.contacto-card p {
+    text-align: center;
+    color: var(--textosec);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* FORMULARIO */
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-form label {
+    font-size: 0.9rem;
+    color: var(--textosec);
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.contacto-form input::placeholder,
+.contacto-form textarea::placeholder {
+    color: #888;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    outline: 2px solid var(--hover);
+}
+
+/* BOTÓN (usa el estilo unificado existente) */
+.contacto-form button {
+    align-self: center;
+    margin-top: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .contacto-card {
+        padding: 2rem;
+    }
+
+    .contacto-card h1 {
+        font-size: 2rem;
+    }
+}
