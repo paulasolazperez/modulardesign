@@ -21,7 +21,7 @@ $resultado = $conn->query($sql);
 <header class="header-inicio">
     <div class="logo">
         <a href="https://modulardesign.vercel.app">
-            <img src="../img/" alt="Logo">
+            <img src="../img/logo.png" alt="Logo">
         </a>
     </div>
 
