@@ -15,7 +15,7 @@ $total = 0;
 
 <header class="header-inicio">
   <div class="logo">
-    <a href="../../frontend/index.html">
+    <a href="https://modulardesign.vercel.app">
       <img src="../../frontend/img/logo.png" alt="Logo">
     </a>
   </div>
@@ -24,10 +24,10 @@ $total = 0;
 
   <nav class="menu-lateral" id="menu-lateral">
     <ul>
-      <li><a href="../../frontend/index.html">Inicio</a></li>
+      <li><a href="https://modulardesign.vercel.app">Inicio</a></li>
       <li><a href="../catalogo/catalogo.php">Catálogo</a></li>
-      <li><a href="../../frontend/nosotros.html">Nosotros</a></li>
-      <li><a href="../../frontend/contacto.html">Contacto</a></li>
+      <li><a href="https://modulardesign.vercel.app/nosotros.html">Nosotros</a></li>
+      <li><a href="https://modulardesign.vercel.app/contacto.html">Contacto</a></li>
       <a href="../auth/login.php" class="boton-descubre">Gestión catálogo</a>
     </ul>
   </nav>

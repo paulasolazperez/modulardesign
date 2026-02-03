@@ -81,7 +81,7 @@ button { padding: 6px 12px; cursor: pointer; }
 
 <body>
 
-<a href="../../frontend/index.html" class="home-icon" title="Volver al inicio">🏠</a>
+<a href="https://modulardesign.vercel.app" class="home-icon" title="Volver al inicio">🏠</a>
 
 <h1>Gestor de Vinilos</h1>
 

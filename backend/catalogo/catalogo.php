@@ -20,7 +20,7 @@ $resultado = $conn->query($sql);
 
 <header class="header-inicio">
     <div class="logo">
-        <a href="../../frontend/index.html">
+        <a href="https://modulardesign.vercel.app">
             <img src="../img/" alt="Logo">
         </a>
     </div>
@@ -29,10 +29,10 @@ $resultado = $conn->query($sql);
 
     <nav class="menu-lateral" id="menu-lateral">
         <ul>
-            <li><a href="../../frontend/index.html">Inicio</a></li>
+            <li><a href="https://modulardesign.vercel.app">Inicio</a></li>
             <li><a href="catalogo.php">Catálogo</a></li>
-            <li><a href="../../frontend/nosotros.html">Nosotros</a></li>
-            <li><a href="../../frontend/contacto.html">Contacto</a></li>
+            <li><a href="https://modulardesign.vercel.app/nosotros.html">Nosotros</a></li>
+            <li><a href="https://modulardesign.vercel.app/contacto.html">Contacto</a></li>
             <a href="../backend/auth/login.php" class="boton-descubre">Gestión catálogo</a>
         </ul>
     </nav>
@@ -133,10 +133,10 @@ $resultado = $conn->query($sql);
       <h3 class="footer-subtitle">Navegación</h3>
       <div class="footer-line"></div>
       <ul class="footer-links">
-        <li><a href="../../frontend/index.html">Inicio</a></li>
+        <li><a href="https://modulardesign.vercel.app">Inicio</a></li>
         <li><a href="catalogo.php">Catálogo</a></li>
-        <li><a href="../../frontend/nosotros.html">Nosotros</a></li>
-        <li><a href="../../frontend/contacto.html">Contacto</a></li>
+        <li><a href="https://modulardesign.vercel.app/nosotros.html">Nosotros</a></li>
+        <li><a href="https://modulardesign.vercel.app/contacto.html">Contacto</a></li>
       </ul>
     </div>
 
