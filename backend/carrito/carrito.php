@@ -9,7 +9,7 @@ $total = 0;
 <head>
 <meta charset="UTF-8">
 <title>Carrito</title>
-<link rel="stylesheet" href="../../frontend/css/estilos/estilos.css">
+<link rel="stylesheet" href="../css/estilos/estilos.css">
 </head>
 <body>
 
