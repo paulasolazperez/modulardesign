@@ -21,7 +21,7 @@ $resultado = $conn->query($sql);
 <header class="header-inicio">
     <div class="logo">
         <a href="../../frontend/index.html">
-            <img src="/backend/img/" alt="Logo">
+            <img src="../img/" alt="Logo">
         </a>
     </div>
 
@@ -49,7 +49,7 @@ $resultado = $conn->query($sql);
 
                 <img
                     class="vinilo-imagen"
-                    src="/backend/img/images_vinilos/<?= htmlspecialchars($vinilo['foto']) ?>"
+                    src="../img/images_vinilos/<?= htmlspecialchars($vinilo['foto']) ?>"
                     alt="<?= htmlspecialchars($vinilo['nom_vinilo']) ?>"
                 >
 
