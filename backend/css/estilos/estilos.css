@@ -1,0 +1,478 @@
+/* ========== RESETEO GLOBAL ========== */
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Trebuchet MS',sans-serif;}
+:root{--fondogen:#1c1c1c;--fondosec:#141414;--textoprin:white;--textosec:#e0e0e0;--botones:#e10600;--hover:#ff3d00;--precios:#ffd700;}
+html,body{height:100%;}
+body{background-color:var(--fondogen);display:flex;flex-direction:column;}
+/* ========== HEADER ========== */
+.header-inicio{position:absolute;top:0;left:0;width:100%;height:80px;display:flex;justify-content:space-between;align-items:center;padding:0 2rem;z-index:1000;background-color:transparent;}
+.logo{display:flex;align-items:center;min-width:120px;}
+.logo img{height:50px;width:auto;display:block;}
+/* ========== BOTÓN HAMBURGUESA ========== */
+.hamburger-btn{font-size:30px;background:none;border:none;color:white;cursor:pointer;z-index:1600;}
+/* ========== MENÚ LATERAL ========== */
+.menu-lateral{position:fixed;top:0;right:-100%;width:70%;max-width:300px;height:100vh;background:var(--fondosec);box-shadow:0 4px 12px rgba(0,0,0,0.5);display:flex;flex-direction:column;justify-content:center;align-items:center;transition:right 0.4s ease;z-index:1500;}
+.menu-lateral.open{right:0;}
+.menu-lateral ul{list-style:none;}
+.menu-lateral li{margin:20px 0;}
+.menu-lateral a{color:#fff;font-size:1.6rem;text-decoration:none;transition:color 0.3s ease;}
+/* Regla que afecta a todos los enlaces del menú */
+.menu-lateral a:hover{color:var(--hover);}
+.menu-lateral.open::before{content:"";position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(0,0,0,0.4);backdrop-filter:blur(3px);z-index:-1;}
+
+/* === ESTILO BASE UNIFICADO PARA TODOS LOS BOTONES === */
+/* Esta clase se aplicará a .boton-descubre y .footer-button/rating-submit */
+.boton-base, .boton-descubre {
+    display:inline-block;
+    padding:10px 15px;
+    font-size:1rem;
+    font-weight:bold;
+    color:white;
+    background-color:var(--botones);
+    border:none;
+    border-radius:25px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:background-color 0.3s ease,transform 0.3s ease;
+    box-shadow:2px 2px 5px rgba(0,0,0,0.7);
+    /* Resetea la apariencia de <button> */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    line-height: normal; /* Asegura que el botón no se estire verticalmente */
+}
+
+.boton-base:hover, .boton-descubre:hover {
+    background-color:var(--hover);
+    transform:scale(1.05);
+    color:white !important; /* Mantiene el texto blanco en el hover, anulando .menu-lateral a:hover */
+}
+
+/* ========== HERO ========== */
+.hero{position:relative;height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;}
+.hero-fondo{position:absolute;width:100%;height:100%;background:url('../../img/imagen_fondo_main.jpg') center/cover no-repeat;filter:blur(5px);z-index:-1;}
+.hero-texto{position:relative;color:white;text-align:center;z-index:1;}
+.titulo-hero{font-size:70px;text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
+.eslogan{font-size:20px;text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
+/* Estilos específicos para el botón del HERO (manteniendo la clase .boton-descubre) */
+.hero-texto .boton-descubre {
+    margin-top:2rem;
+}
+
+/* ========== CATÁLOGO ========== */
+main{flex:1;}
+.catalogo{padding:3rem;margin:0;height:100vh;background-color:var(--fondogen);color:var(--textoprin);display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.catalogo h2{margin-bottom:3rem;font-size:2.5rem;text-align:center;text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
+.vinilo{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2rem;background-color:var(--fondosec);border-radius:25px;overflow:hidden;transition:transform 0.3s ease,box-shadow 0.3s ease;max-width:1100px;}
+.vinilo:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.6);}
+.vinilo-imagen{width:100%;max-width:400px;height:auto;display:block;}
+.vinilo-info{flex:1;display:flex;flex-direction:column;justify-content:center;padding:3rem;}
+.vinilo-titulo{font-size:2rem;margin-bottom:1rem;text-shadow:2px 2px 4px rgba(0,0,0,0.7);color:var(--precios);}
+.vinilo-descripcion{font-size:1.2rem;margin-bottom:1.5rem;line-height:1.5;color:var(--textosec);}
+.vinilo-precio{font-size:1.6rem;font-weight:bold;color:var(--precios);text-shadow:1px 1px 3px rgba(0,0,0,0.7);}
+/* ========== SOBRE NOSOTROS ========== */
+.nosotros-seccion{background-color:var(--fondosec);color:var(--textoprin);padding:6rem 2rem;text-align:center;}
+.nosotros-titulo{font-size:2.5rem;margin-bottom:2rem;color:var(--precios);text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
+.nosotros-texto{font-size:1.2rem;color:var(--textosec);max-width:800px;margin:0 auto;line-height:1.7;}
+/* ========== HISTORIA ========== */
+.historia-seccion{background:var(--fondogen);color:#fff;padding:80px 2rem;text-align:center;}
+.historia-titulo{font-size:2rem;margin-bottom:2rem;font-family:'Cormorant',serif;}
+.historia-texto{max-width:800px;margin:0 auto 1.5rem auto;font-family:'Cabin',sans-serif;font-size:1.1rem;line-height:1.6;}
+/* === FOOTER === */
+.footer{background-color:var(--fondosec);color:var(--textosec);padding:4rem 2rem;font-family:'Inter',sans-serif;}
+/* === VALORACIÓN SUPERIOR === */
+.footer-rating-top{text-align:center;margin-bottom:2rem;}
+.footer-subtitle{color:#fff;font-weight:600;font-size:1.4rem;text-transform:uppercase;display:inline-block;}
+.footer-line{width:60px;height:3px;background-color:#e53935;border-radius:3px;margin:0.4rem auto 1rem;}
+.rating-label{color:#ccc;font-size:0.95rem;margin-bottom:0.5rem;}
+/* Estrellas */
+.stars{display:flex;justify-content:center;gap:0.6rem;margin:1rem 0;}
+.stars i{font-size:2rem;color:#555;cursor:pointer;transition:color 0.3s,transform 0.2s;}
+.stars i:hover{transform:scale(1.15);color:#e53935;}
+.stars i.filled{color:#e53935;}
+/* Textarea */
+.rating-text{width:80%;max-width:500px;height:70px;margin:0.6rem 0 1rem;padding:0.8rem;border-radius:8px;border:none;background-color:#2a2a2a;color:#fff;resize:none;font-size:0.95rem;outline:none;}
+/* BOTONES DEL FOOTER (Se sobrescriben para usar el nuevo diseño unificado) */
+.footer-button, .rating-submit {
+    /* HEREDA EL ESTILO UNIFICADO */
+    @extend .boton-base;
+    height: 42px; /* Propiedad específica para el footer */
+    padding: 0 1.2rem;
+    margin: 0;
+}
+.footer-rating-top .rating-submit {
+    display: block;
+    margin: 1rem auto 0; /* Centrado específico para el botón de enviar valoración */
+    height: auto;
+    padding: 10px 15px;
+}
+/* Línea divisoria */
+.footer-divider{width:100%;height:1px;background-color:rgba(255,255,255,0.15);margin:2rem 0;}
+/* === CONTENIDO INFERIOR === */
+.footer-container{max-width:1200px;margin:0 auto;display:flex;gap:2rem;position:relative;align-items:flex-start;}
+/* Líneas verticales */
+.footer-container::before,.footer-container::after{content:"";position:absolute;top:0;bottom:0;width:1px;background-color:rgba(255,255,255,0.1);}
+.footer-container::before{left:33.33%;}.footer-container::after{left:66.66%;}
+.footer-section{flex:1;padding:0 1.5rem;text-align:center;}
+/* Títulos centrados */
+.footer-title,.footer-subtitle{color:#fff;font-weight:600;text-align:center;}
+.footer-description{color:#d7d7d7;font-size:0.95rem;margin-bottom:1rem;}
+/* Enlaces */
+.footer-links{list-style:none;padding:0;margin:0;}
+.footer-links li{margin-bottom:0.5rem;}
+.footer-links a{color:var(--textosec);text-decoration:none;transition:color 0.3s;}
+.footer-links a:hover{color:#ff5252;}
+/* === FORMULARIO SUSCRIPCIÓN === */
+.footer-form{display:flex;align-items:center;justify-content:center;gap:0.6rem;}
+.footer-input{flex:1;padding:0.6rem 1rem;border-radius:25px;border:none;outline:none;background-color:#2a2a2a;color:#fff;font-size:0.9rem;height:42px;}
+
+/* Redes sociales */
+.social-links{margin-top:1rem;}
+.social-links a{color:var(--textosec);font-size:1.3rem;margin-right:1rem;transition:color 0.3s;}
+.social-links a:hover{color:#e53935;}
+/* Copyright */
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);margin-top:1.5rem;padding-top:1rem;font-size:0.9rem;color:var(--textosec);}
+.footer-bottom span{color:#e53935;}
+
+/* Responsivo */
+@media (max-width: 900px){.footer-container{flex-direction:column;}.footer-container::before,.footer-container::after{display:none;}.footer-section{padding:1rem 0;}.footer-form{flex-direction:column;align-items:stretch;}.footer-input{width:100%;}.footer-button, .rating-submit, .boton-descubre{width:100%;margin-top:0.6rem;}}
+
+/* === LAYOUT IMAGEN + TEXTO NOSOTROS / HISTORIA === */
+.nosotros-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+/* Invierte columnas */
+.nosotros-flex.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Texto */
+.nosotros-contenido {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Imagen */
+.nosotros-imagen {
+    flex: 1;
+    max-width: 450px;
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    transition: transform 0.4s ease;
+}
+
+/* Hover sutil */
+.nosotros-imagen img:hover {
+    transform: scale(1.03);
+}
+
+/* ================== CATÁLOGO EN 2 COLUMNAS (SIN TOCAR DESTACADO) ================== */
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: start;
+    padding-top: 7rem; /* para que no lo tape el header */
+}
+
+/* El título ocupa las 2 columnas */
+.catalogo h2 {
+    grid-column: 1 / -1;
+}
+
+/* SOLO tarjetas del catálogo */
+.catalogo-vinilo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imagen solo catálogo */
+.catalogo-vinilo .vinilo-imagen {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ================== FIX DEFINITIVO CATÁLOGO ================== */
+
+/* Cada tarjeta del catálogo es independiente */
+.catalogo-vinilo {
+    overflow: hidden;
+}
+
+/* RESETEO TOTAL de la imagen SOLO en el catálogo */
+.catalogo-vinilo .vinilo-imagen {
+    position: static !important;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    transform: none;
+}
+
+/* Separación clara entre tarjetas */
+.catalogo-vinilo + .catalogo-vinilo {
+    margin-top: 0;
+}
+
+/* ================== FIX REAL CATÁLOGO ================== */
+
+/* El catálogo SÍ es grid (anula flex y height) */
+.catalogo {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    align-items: start;
+    justify-content: stretch;
+
+    height: auto !important;
+    padding-top: 7rem; /* para el header */
+}
+
+/* El título ocupa las dos columnas */
+.catalogo h2 {
+    grid-column: 1 / -1;
+}
+
+/* SOLO las tarjetas del catálogo */
+.catalogo-vinilo {
+    display: block;            /* 🔑 NO flex */
+    max-width: 100%;
+}
+
+/* Imagen normal, sin herencias raras */
+.catalogo-vinilo .vinilo-imagen {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    position: static;
+}
+
+/* ================== CARRITO ================== */
+
+.carrito-layout {
+    padding: 7rem 3rem 3rem;
+    color: white;
+}
+
+.carrito-titulo {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.carrito-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* LISTA */
+.carrito-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* TARJETA */
+.carrito-card {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 20px;
+}
+
+/* IMAGEN */
+.carrito-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* INFO */
+.carrito-card-info h3 {
+    color: var(--precios);
+    margin-bottom: 0.5rem;
+}
+
+.carrito-descripcion {
+    color: var(--textosec);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.carrito-cantidad {
+    font-size: 0.9rem;
+}
+
+.carrito-eliminar {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+/* PRECIO DERECHA */
+.carrito-precio-derecha {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--precios);
+    white-space: nowrap;
+}
+
+/* RESUMEN */
+.carrito-resumen {
+    position: sticky;
+    top: 7rem;
+
+    background: #111;
+    padding: 2rem;
+    border-radius: 20px;
+
+    height: fit-content;
+}
+
+.carrito-resumen h3 {
+    color: var(--precios);
+    margin-bottom: 2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .carrito-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .carrito-resumen {
+        position: static;
+    }
+}
+
+
+
+/* En móvil: 1 columna */
+@media (max-width: 900px) {
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive: móvil a 1 columna */
+@media (max-width: 600px) {
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nosotros-flex,
+    .nosotros-flex.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nosotros-imagen {
+        max-width: 100%;
+    }
+}
+
+/* ================== CONTACTO ================== */
+
+.contacto-layout {
+    padding: 7rem 2rem 4rem; /* respeta header fijo */
+    color: var(--textoprin);
+    display: flex;
+    justify-content: center;
+}
+
+.contacto-card {
+    background-color: var(--fondosec);
+    padding: 3rem;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+.contacto-card h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--precios);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.contacto-card p {
+    text-align: center;
+    color: var(--textosec);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* FORMULARIO */
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-form label {
+    font-size: 0.9rem;
+    color: var(--textosec);
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+    color: white;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.contacto-form input::placeholder,
+.contacto-form textarea::placeholder {
+    color: #888;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    outline: 2px solid var(--hover);
+}
+
+/* BOTÓN (usa el estilo unificado existente) */
+.contacto-form button {
+    align-self: center;
+    margin-top: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .contacto-card {
+        padding: 2rem;
+    }
+
+    .contacto-card h1 {
+        font-size: 2rem;
+    }
+}
