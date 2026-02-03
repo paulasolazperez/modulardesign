@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "modular_design";
+$host = getenv("mysql.railway.internal");
+$user = getenv("root");
+$pass = getenv("TyJgMxGDPlopUAINuXXGWeJNLrcNwDCF");
+$db = getenv("railway");
 
 $conn = new mysqli($host,$user,$pass,$db);
 
