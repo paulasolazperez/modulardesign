@@ -33,7 +33,7 @@ $resultado = $conn->query($sql);
             <li><a href="catalogo.php">Catálogo</a></li>
             <li><a href="https://modulardesign.vercel.app/nosotros.html">Nosotros</a></li>
             <li><a href="https://modulardesign.vercel.app/contacto.html">Contacto</a></li>
-            <a href="../backend/auth/login.php" class="boton-descubre">Gestión catálogo</a>
+            <a href="../auth/login.php" class="boton-descubre">Gestión catálogo</a>
         </ul>
     </nav>
 </header>
