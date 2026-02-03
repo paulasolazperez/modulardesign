@@ -7,7 +7,7 @@ if (isset($_POST['add_vinilo'])) {
 
     // Guardar imagen
     $nombreFoto = basename($_FILES['foto']['name']);
-    $rutaDestino = __DIR__ . "/../img/images_vinilos/" . $nombreFoto;
+    $rutaDestino = __DIR__ . "/backend/img/images_vinilos/" . $nombreFoto;
 
     move_uploaded_file($_FILES['foto']['tmp_name'], $rutaDestino);
     $foto = $nombreFoto;
@@ -135,7 +135,7 @@ button { padding: 6px 12px; cursor: pointer; }
 <?php while ($v = $vinilos->fetch_assoc()) { ?>
 <tr>
     <td>
-        <img src="../img/images_vinilos/<?= $v['foto'] ?>">
+        <img src="/backend/img/images_vinilos/<?= $v['foto'] ?>">
     </td>
     <td><?= $v['nom_vinilo'] ?></td>
     <td><?= $v['nom_artista'] ?></td>
