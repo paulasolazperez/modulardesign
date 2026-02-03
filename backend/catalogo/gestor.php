@@ -135,7 +135,7 @@ button { padding: 6px 12px; cursor: pointer; }
 <?php while ($v = $vinilos->fetch_assoc()) { ?>
 <tr>
     <td>
-        <img src="../img/images_vinilos/<?= $v['foto'] ?>">
+        <img src="../img/images_vinilos/<?= htmlspecialchars($vinilo['foto']) ?>">
     </td>
     <td><?= $v['nom_vinilo'] ?></td>
     <td><?= $v['nom_artista'] ?></td>
