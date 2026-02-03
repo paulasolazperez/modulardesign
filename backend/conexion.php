@@ -1,9 +1,9 @@
 <?php
 
-$host = getenv("MYSQLHOST");
-$user = getenv("MYSQLUSER");
-$pass = getenv("MYSQLPASSWORD");
-$db = getenv("MYSQLDATABASE");
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "modular_design";
 
 $conn = new mysqli($host,$user,$pass,$db);
 
