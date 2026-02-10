@@ -165,81 +165,75 @@ if (isset($_POST['buscar_btn'])) {
         <?php } ?>
     </table>
 
-    <!-- ===================== OPINIONES ===================== -->
+<?php
+/* ===================== OPINIONES ===================== */
 
-    <h2>Opiniones de clientes</h2>
+$filtro_ciudad = $_GET['filtro_ciudad'] ?? '';
+$filtro_vinilo = $_GET['filtro_vinilo'] ?? '';
 
-    <input type="text" id="filtroCiudad" placeholder="Ciudad">
-    <input type="number" id="filtroVinilo" placeholder="ID Vinilo">
-    <button onclick="cargarOpiniones()">Filtrar</button>
+/* ELIMINAR OPINION */
+if(isset($_GET['borrar_opinion'])){
+    $id = $_GET['borrar_opinion'];
+    $conn->query("DELETE FROM opiniones WHERE id_opinion=$id");
+    header("Location: gestor.php");
+    exit;
+}
 
-    <table id="tablaOpiniones">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Ciudad</th>
-                <th>Comentario</th>
-                <th>Vinilo</th>
-                <th>Fecha</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+$sql_op = "
+SELECT o.*, v.nom_vinilo
+FROM opiniones o
+JOIN vinilos v ON o.id_vinilo = v.id_vinilo
+WHERE 1=1
+";
 
-    <script>
+if($filtro_ciudad != ''){
+    $sql_op .= " AND o.ciudad LIKE '%$filtro_ciudad%'";
+}
 
-        async function cargarOpiniones() {
+if($filtro_vinilo != ''){
+    $sql_op .= " AND o.id_vinilo = '$filtro_vinilo'";
+}
 
-            let url = "../opiniones/obtener_opiniones.php";
-            const ciudad = document.getElementById("filtroCiudad").value;
-            const vinilo = document.getElementById("filtroVinilo").value;
+$sql_op .= " ORDER BY o.fecha DESC";
 
-            if (ciudad) url += "ciudad=" + ciudad + "&";
-            if (vinilo) url += "id_vinilo=" + vinilo;
+$opiniones = $conn->query($sql_op);
+?>
 
-            const res = await fetch(url);
+<h2>Opiniones de clientes</h2>
 
-            const tbody = document.querySelector("#tablaOpiniones tbody");
-            tbody.innerHTML = "";
+<form method="GET">
+    <input type="text" name="filtro_ciudad" placeholder="Ciudad">
+    <input type="number" name="filtro_vinilo" placeholder="ID Vinilo">
+    <button type="submit">Filtrar</button>
+</form>
 
-            data.datos.forEach(o => {
-                tbody.innerHTML += `
-        <tr>
-            <td>${o.id_opinion}</td>
-            <td>${o.nombre}</td>
-            <td>${o.ciudad}</td>
-            <td>${o.comentario}</td>
-            <td>${o.titulo_vinilo}</td>
-            <td>${o.fecha}</td>
-            <td>
-                <button onclick="eliminarOpinion(${o.id_opinion})">Eliminar</button>
-            </td>
-        </tr>`;
-            });
-        }
+<table>
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Ciudad</th>
+    <th>Comentario</th>
+    <th>Vinilo</th>
+    <th>Fecha</th>
+    <th>Acciones</th>
+</tr>
 
-        async function eliminarOpinion(id) {
-
-            if (!confirm("¿Eliminar opinión?")) return;
-
-            const form = new FormData();
-            form.append("id_opinion", id);
-
-            await fetch("../opiniones/eliminar_opiniones.php", {
-
-                method: "POST",
-                body: form
-            });
-
-            cargarOpiniones();
-        }
-
-        cargarOpiniones();
-
-    </script>
-
+<?php while($o = $opiniones->fetch_assoc()){ ?>
+<tr>
+    <td><?= $o['id_opinion'] ?></td>
+    <td><?= $o['nombre'] ?></td>
+    <td><?= $o['ciudad'] ?></td>
+    <td><?= $o['comentario'] ?></td>
+    <td><?= $o['nom_vinilo'] ?></td>
+    <td><?= $o['fecha'] ?></td>
+    <td>
+        <a href="gestor.php?borrar_opinion=<?= $o['id_opinion'] ?>"
+           onclick="return confirm('¿Eliminar opinión?')">
+           Eliminar
+        </a>
+    </td>
+</tr>
+<?php } ?>
+</table>
 </body>
-
 </html>
