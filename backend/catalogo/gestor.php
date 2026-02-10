@@ -192,7 +192,7 @@ if (isset($_POST['buscar_btn'])) {
 
         async function cargarOpiniones() {
 
-            let url = "../backend/opiniones/obtener_opiniones.php";
+            let url = "../opiniones/obtener_opiniones.php";
             const ciudad = document.getElementById("filtroCiudad").value;
             const vinilo = document.getElementById("filtroVinilo").value;
 
@@ -228,7 +228,7 @@ if (isset($_POST['buscar_btn'])) {
             const form = new FormData();
             form.append("id_opinion", id);
 
-            await fetch("../backend/opiniones/eliminar_opiniones.php", {
+            await fetch("../opiniones/eliminar_opiniones.php", {
 
                 method: "POST",
                 body: form
