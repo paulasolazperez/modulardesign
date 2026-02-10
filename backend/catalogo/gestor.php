@@ -165,8 +165,9 @@ if (isset($_POST['buscar_btn'])) {
         <?php } ?>
     </table>
 
-   /* ===================== OPINIONES ===================== */
-<script>
+<?php
+/* ===================== OPINIONES ===================== */
+
 $filtro_ciudad = $_GET['filtro_ciudad'] ?? '';
 $filtro_vinilo = $_GET['filtro_vinilo'] ?? '';
 
@@ -196,7 +197,7 @@ if($filtro_vinilo != ''){
 $sql_op .= " ORDER BY o.fecha DESC";
 
 $opiniones = $conn->query($sql_op);
-</script>
+?>
 
 <h2>Opiniones de clientes</h2>
 
@@ -235,4 +236,4 @@ $opiniones = $conn->query($sql_op);
 <?php } ?>
 </table>
 </body>
-</html> 
+</html>
