@@ -200,7 +200,6 @@ if (isset($_POST['buscar_btn'])) {
             if (vinilo) url += "id_vinilo=" + vinilo;
 
             const res = await fetch(url);
-            const data = await res.json();
 
             const tbody = document.querySelector("#tablaOpiniones tbody");
             tbody.innerHTML = "";
