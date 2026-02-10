@@ -16,7 +16,7 @@ $total = 0;
 <header class="header-inicio">
   <div class="logo">
     <a href="https://modulardesign.vercel.app">
-      <img src="../../frontend/img/logo.png" alt="Logo">
+      <img src="../img/logo.png" alt="Logo">
     </a>
   </div>
 
@@ -55,7 +55,7 @@ $total = 0;
                 <article class="carrito-card">
 
                     <img class="carrito-img"
-                         src="../../frontend/img/images_vinilos/<?php echo htmlspecialchars($item['foto']); ?>"
+                         src="../img/images_vinilos/<?php echo htmlspecialchars($item['foto']); ?>"
                          alt="<?php echo htmlspecialchars($item['nombre']); ?>">
 
                     <div class="carrito-card-info">
