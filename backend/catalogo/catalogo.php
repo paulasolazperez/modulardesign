@@ -3,6 +3,9 @@ require "../conexion.php";
 
 $sql = "SELECT * FROM vinilos WHERE visible = 1";
 $resultado = $conn->query($sql);
+
+    $sqlOpiniones = "SELECT o.*, v.nom_viniloFROM opiniones o JOIN vinilos v ON o.id_vinilo = v.id_viniloORDER BY o.fecha DESC";
+    $opiniones = $conn->query($sqlOpiniones);
 ?>
 
 <!DOCTYPE html>
@@ -73,10 +76,29 @@ $resultado = $conn->query($sql);
                            Añadir al carrito
                         </a>
                     </div>
+                    <div style="margin-top:1rem;">
+                      <a href="opinion_form.php?id=<?= $vinilo['id_vinilo'] ?>" class="boton-descubre">
+                        Dejar opinión
+                      </a>
+                    </div>
                 </div>
 
             </article>
 
+              <section class="opiniones">
+    <h2>Opiniones de nuestros clientes</h2>
+
+    <div class="opiniones-carrusel">
+        <?php while ($op = $opiniones->fetch_assoc()): ?>
+            <div class="opinion-card">
+                <h4><?= htmlspecialchars($op['nombre']) ?></h4>
+                <small><?= htmlspecialchars($op['ciudad']) ?></small>
+                <p><?= htmlspecialchars($op['comentario']) ?></p>
+                <strong><?= htmlspecialchars($op['nom_vinilo']) ?></strong>
+            </div>
+        <?php endwhile; ?>
+    </div>
+</section>
         <?php endwhile; ?>
     <?php else: ?>
         <p>No hay vinilos disponibles.</p>

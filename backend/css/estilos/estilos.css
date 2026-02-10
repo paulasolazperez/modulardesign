@@ -476,3 +476,19 @@ main{flex:1;}
         font-size: 2rem;
     }
 }
+
+.opiniones-carrusel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.opinion-card {
+    min-width: 250px;
+    background: #111;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    scroll-snap-align: start;
+}
