@@ -235,4 +235,4 @@ $opiniones = $conn->query($sql_op);
 <?php } ?>
 </table>
 </body>
-</html>
+</html> 
