@@ -90,7 +90,14 @@ $resultado = $conn->query($sql);
 
             </article>
 
-              <section class="opiniones">
+
+        <?php endwhile; ?>
+    <?php else: ?>
+        <p>No hay vinilos disponibles.</p>
+    <?php endif; ?>
+
+
+                  <section class="opiniones">
     <h2>Opiniones de nuestros clientes</h2>
 
     <div class="opiniones-carrusel">
@@ -104,11 +111,6 @@ $resultado = $conn->query($sql);
         <?php endwhile; ?>
     </div>
 </section>
-        <?php endwhile; ?>
-    <?php else: ?>
-        <p>No hay vinilos disponibles.</p>
-    <?php endif; ?>
-
 </main>
 <footer class="footer">
 
