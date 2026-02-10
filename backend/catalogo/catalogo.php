@@ -4,7 +4,12 @@ require "../conexion.php";
 $sql = "SELECT * FROM vinilos WHERE visible = 1";
 $resultado = $conn->query($sql);
 
-    $sqlOpiniones = "SELECT o.*, v.nom_viniloFROM opiniones o JOIN vinilos v ON o.id_vinilo = v.id_viniloORDER BY o.fecha DESC";
+    $sqlOpiniones = $sqlOpiniones = "
+    SELECT o.*, v.nom_vinilo
+    FROM opiniones o
+    JOIN vinilos v ON o.id_vinilo = v.id_vinilo
+    ORDER BY o.fecha DESC
+";
     $opiniones = $conn->query($sqlOpiniones);
 ?>
 
